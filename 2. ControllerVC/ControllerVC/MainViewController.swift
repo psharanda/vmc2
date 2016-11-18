@@ -5,10 +5,16 @@
 
 import UIKit
 
+protocol MainViewControllerRoutingDelegate: class {
+    func showDetails(viewController: MainViewController)
+}
+
 class MainViewController: UIViewController {
     
     let textLoader: TextLoaderProtocol
     let rootView: MainViewProtocol
+    
+    weak var routingDelegate: MainViewControllerRoutingDelegate?
     
     init(textLoader: TextLoaderProtocol, rootView: MainViewProtocol) {
         self.textLoader = textLoader
@@ -16,11 +22,9 @@ class MainViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        rootView.delegate = self
-        
         title = "Controller VC"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Details", style: .plain, target: self, action: #selector(doneClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Details", style: .plain, target: self, action: #selector(detailsClicked))
         navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
@@ -32,9 +36,9 @@ class MainViewController: UIViewController {
         view = rootView as? UIView
     }
     
-    @objc private func doneClicked() {
+    @objc private func detailsClicked() {
         
-        navigationController?.pushViewController(DetailsViewController(text: rootView.text, rootView: DetailsView()), animated: true)
+        routingDelegate?.showDetails(viewController: self)
     }
 }
 

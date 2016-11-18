@@ -8,26 +8,37 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     
+    private lazy var label = UILabel()
+    
     private let text: String?
     
-    let rootView: DetailsViewProtocol
-    
-    init(text: String?, rootView: DetailsViewProtocol) {
+    init(text: String?) {
         self.text = text
-        self.rootView = rootView
         super.init(nibName: nil, bundle: nil)
-        title = "Details"
-
-        rootView.text = text
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func loadView() {
-        view = rootView as? UIView
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Details"
+        
+        view.backgroundColor = .white
+        
+        label.numberOfLines = 0
+        label.text = text?.uppercased()
+        view.addSubview(label)
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        
+        label.frame = UIEdgeInsetsInsetRect(view.bounds, UIEdgeInsets(top: 80, left: 20, bottom: 80, right: 20))
+        
+    }
 }
 
