@@ -11,4 +11,8 @@ Attempt to apply clean MVP arhitecture where UIViewController is Presenter (Cont
 ## 3. VIPER aka 'MVP + Routing'
 Famous VIPER adopted to reality of our super complex app. UIViewController is View.
 ## 4. MVVM
-This is how Microsoft tech can be adopted to iOS. UIViewController is View.
+This is how Microsoft tech can be adopted to iOS + Routing. UIViewController is View.
+## 5. MVP+Routing+Bindings
+Reactive VIPER (MVP+Routing)
+## 6. MVVM+Bindings
+Reactive MVVM+Routing
