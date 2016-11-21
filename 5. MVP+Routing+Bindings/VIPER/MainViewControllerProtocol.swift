@@ -5,7 +5,7 @@
 
 import Foundation
 
-protocol MainViewControllerProtocol: class {
+protocol MainViewProtocol: View {
     var loading: Signal<Bool> {get}
     var text: Signal<String?> {get}
     var loadClick: Signal<Void> {get}
