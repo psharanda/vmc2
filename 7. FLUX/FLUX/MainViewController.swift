@@ -5,7 +5,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, MainViewControllerProtocol {
     
     private lazy var button = UIButton(type: .system)
     private lazy var label = UILabel()
@@ -29,7 +29,8 @@ class MainViewController: UIViewController {
         view.addSubview(label)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Details", style: .plain, target: self, action: #selector(doneClicked))
-        navigationItem.rightBarButtonItem?.isEnabled = false
+        
+        render()
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,26 +41,31 @@ class MainViewController: UIViewController {
         button.frame = CGRect(x: 20, y: view.bounds.height - 60, width: view.bounds.width - 40, height: 40)
     }
     
+    var state: MainViewState = MainViewState() {
+        didSet {
+           render()
+        }
+    }
+    
+    func render() {
+        let hasText = state.text != nil
+        label.text = state.text
+        if state.loading {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        self.navigationItem.rightBarButtonItem?.isEnabled = hasText && !state.loading
+    }
+    
+    var output: ((MainViewEvent)->Void)?
+
     @objc private func doneClicked() {
-        navigationController?.pushViewController(DetailsViewController(text: label.text), animated: true)
+        output?(.showDetails)
     }
     
     @objc private func buttonClicked() {
-        activityIndicator.startAnimating()
-        label.text = nil
-        navigationItem.rightBarButtonItem?.isEnabled = false
-        
-        loadText {
-            self.activityIndicator.stopAnimating()
-            self.label.text = $0
-            self.navigationItem.rightBarButtonItem?.isEnabled =  true
-        }
-    }
-
-    private func loadText(completion: @escaping (String)->Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            completion("Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.")
-        }
+        output?(.loadText)
     }
 }
 
