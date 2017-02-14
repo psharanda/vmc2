@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		1B158F6E1DDF21150069E60E /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B158F6D1DDF21150069E60E /* Signal.swift */; };
+		1B45810E1DE1D6F1003F96A2 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45810D1DE1D6F1003F96A2 /* MainModule.swift */; };
+		1B4581121DE1DBDE003F96A2 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4581111DE1DBDE003F96A2 /* Context.swift */; };
+		1B4581141DE1E47B003F96A2 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4581131DE1E47B003F96A2 /* Routing.swift */; };
+		1B6050321DE201DE00B74DC3 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4581111DE1DBDE003F96A2 /* Context.swift */; };
+		1B6050331DE201DE00B74DC3 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4581131DE1E47B003F96A2 /* Routing.swift */; };
+		1B6050341DE201DE00B74DC3 /* MainViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF815B01DDE176C00D7DDAB /* MainViewControllerProtocol.swift */; };
+		1B6050351DE201DE00B74DC3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF815AC1DDE175700D7DDAB /* MainViewController.swift */; };
+		1B6050361DE201DE00B74DC3 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF815B41DDE185C00D7DDAB /* MainPresenter.swift */; };
+		1B6050371DE201DE00B74DC3 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45810D1DE1D6F1003F96A2 /* MainModule.swift */; };
+		1B6050381DE201DE00B74DC3 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B158F6D1DDF21150069E60E /* Signal.swift */; };
+		1B6050391DE201DE00B74DC3 /* TextLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD88B561DDEF1780059E401 /* TextLoaderProtocol.swift */; };
+		1B60503A1DE201DE00B74DC3 /* TextLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD88B571DDEF1780059E401 /* TextLoader.swift */; };
+		1B60503B1DE201DE00B74DC3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF815B81DDE217F00D7DDAB /* DetailsViewController.swift */; };
+		1B60503C1DE201DE00B74DC3 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF815B61DDE1F7D00D7DDAB /* Wireframe.swift */; };
+		1B60503E1DE201F200B74DC3 /* TestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60503D1DE201F200B74DC3 /* TestContext.swift */; };
+		1B6050401DE206CD00B74DC3 /* VIPERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60501F1DE1FF3900B74DC3 /* VIPERTests.swift */; };
 		1BD88B581DDEF1780059E401 /* TextLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD88B561DDEF1780059E401 /* TextLoaderProtocol.swift */; };
 		1BD88B591DDEF1780059E401 /* TextLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD88B571DDEF1780059E401 /* TextLoader.swift */; };
 		1BF815901DDE15EC00D7DDAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF8158F1DDE15EC00D7DDAB /* AppDelegate.swift */; };
@@ -20,8 +36,25 @@
 		1BF815B91DDE217F00D7DDAB /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF815B81DDE217F00D7DDAB /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1B6050221DE1FF3900B74DC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BF815841DDE15EC00D7DDAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BF8158B1DDE15EC00D7DDAB;
+			remoteInfo = VIPER;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1B158F6D1DDF21150069E60E /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		1B45810D1DE1D6F1003F96A2 /* MainModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
+		1B4581111DE1DBDE003F96A2 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		1B4581131DE1E47B003F96A2 /* Routing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		1B60501D1DE1FF3900B74DC3 /* VIPERTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPERTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B60501F1DE1FF3900B74DC3 /* VIPERTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERTests.swift; sourceTree = "<group>"; };
+		1B6050211DE1FF3900B74DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B60503D1DE201F200B74DC3 /* TestContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestContext.swift; sourceTree = "<group>"; };
 		1BD88B561DDEF1780059E401 /* TextLoaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextLoaderProtocol.swift; sourceTree = "<group>"; };
 		1BD88B571DDEF1780059E401 /* TextLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextLoader.swift; sourceTree = "<group>"; };
 		1BF8158C1DDE15EC00D7DDAB /* VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +70,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1B60501A1DE1FF3900B74DC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BF815891DDE15EC00D7DDAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,10 +87,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B45810A1DE1D67E003F96A2 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				1BF815B01DDE176C00D7DDAB /* MainViewControllerProtocol.swift */,
+				1BF815AC1DDE175700D7DDAB /* MainViewController.swift */,
+				1BF815B41DDE185C00D7DDAB /* MainPresenter.swift */,
+				1B45810D1DE1D6F1003F96A2 /* MainModule.swift */,
+			);
+			name = Module;
+			sourceTree = "<group>";
+		};
+		1B60501E1DE1FF3900B74DC3 /* VIPERTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B60501F1DE1FF3900B74DC3 /* VIPERTests.swift */,
+				1B6050211DE1FF3900B74DC3 /* Info.plist */,
+				1B60503D1DE201F200B74DC3 /* TestContext.swift */,
+			);
+			path = VIPERTests;
+			sourceTree = "<group>";
+		};
 		1BF815831DDE15EC00D7DDAB = {
 			isa = PBXGroup;
 			children = (
 				1BF8158E1DDE15EC00D7DDAB /* VIPER */,
+				1B60501E1DE1FF3900B74DC3 /* VIPERTests */,
 				1BF8158D1DDE15EC00D7DDAB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				1BF8158C1DDE15EC00D7DDAB /* VIPER.app */,
+				1B60501D1DE1FF3900B74DC3 /* VIPERTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +129,9 @@
 		1BF8158E1DDE15EC00D7DDAB /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				1B4581111DE1DBDE003F96A2 /* Context.swift */,
+				1B4581131DE1E47B003F96A2 /* Routing.swift */,
+				1B45810A1DE1D67E003F96A2 /* Module */,
 				1B158F6D1DDF21150069E60E /* Signal.swift */,
 				1BF815A51DDE165900D7DDAB /* Model */,
 				1BF815A41DDE165300D7DDAB /* View */,
@@ -82,7 +148,6 @@
 		1BF815A21DDE164400D7DDAB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				1BF815B41DDE185C00D7DDAB /* MainPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -98,8 +163,6 @@
 		1BF815A41DDE165300D7DDAB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1BF815B01DDE176C00D7DDAB /* MainViewControllerProtocol.swift */,
-				1BF815AC1DDE175700D7DDAB /* MainViewController.swift */,
 				1BF815B81DDE217F00D7DDAB /* DetailsViewController.swift */,
 			);
 			name = View;
@@ -117,6 +180,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1B60501C1DE1FF3900B74DC3 /* VIPERTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B6050261DE1FF3900B74DC3 /* Build configuration list for PBXNativeTarget "VIPERTests" */;
+			buildPhases = (
+				1B6050191DE1FF3900B74DC3 /* Sources */,
+				1B60501A1DE1FF3900B74DC3 /* Frameworks */,
+				1B60501B1DE1FF3900B74DC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B6050231DE1FF3900B74DC3 /* PBXTargetDependency */,
+			);
+			name = VIPERTests;
+			productName = VIPERTests;
+			productReference = 1B60501D1DE1FF3900B74DC3 /* VIPERTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1BF8158B1DDE15EC00D7DDAB /* VIPER */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BF8159E1DDE15EC00D7DDAB /* Build configuration list for PBXNativeTarget "VIPER" */;
@@ -144,6 +225,11 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = psharanda;
 				TargetAttributes = {
+					1B60501C1DE1FF3900B74DC3 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1BF8158B1DDE15EC00D7DDAB;
+					};
 					1BF8158B1DDE15EC00D7DDAB = {
 						CreatedOnToolsVersion = 8.2;
 						ProvisioningStyle = Automatic;
@@ -164,11 +250,19 @@
 			projectRoot = "";
 			targets = (
 				1BF8158B1DDE15EC00D7DDAB /* VIPER */,
+				1B60501C1DE1FF3900B74DC3 /* VIPERTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1B60501B1DE1FF3900B74DC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BF8158A1DDE15EC00D7DDAB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,13 +275,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1B6050191DE1FF3900B74DC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B6050371DE201DE00B74DC3 /* MainModule.swift in Sources */,
+				1B6050361DE201DE00B74DC3 /* MainPresenter.swift in Sources */,
+				1B60503B1DE201DE00B74DC3 /* DetailsViewController.swift in Sources */,
+				1B60503A1DE201DE00B74DC3 /* TextLoader.swift in Sources */,
+				1B6050321DE201DE00B74DC3 /* Context.swift in Sources */,
+				1B6050391DE201DE00B74DC3 /* TextLoaderProtocol.swift in Sources */,
+				1B6050341DE201DE00B74DC3 /* MainViewControllerProtocol.swift in Sources */,
+				1B60503C1DE201DE00B74DC3 /* Wireframe.swift in Sources */,
+				1B6050381DE201DE00B74DC3 /* Signal.swift in Sources */,
+				1B6050331DE201DE00B74DC3 /* Routing.swift in Sources */,
+				1B6050351DE201DE00B74DC3 /* MainViewController.swift in Sources */,
+				1B6050401DE206CD00B74DC3 /* VIPERTests.swift in Sources */,
+				1B60503E1DE201F200B74DC3 /* TestContext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BF815881DDE15EC00D7DDAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1BF815B71DDE1F7D00D7DDAB /* Wireframe.swift in Sources */,
+				1B4581141DE1E47B003F96A2 /* Routing.swift in Sources */,
 				1BF815B91DDE217F00D7DDAB /* DetailsViewController.swift in Sources */,
+				1B4581121DE1DBDE003F96A2 /* Context.swift in Sources */,
 				1BF815901DDE15EC00D7DDAB /* AppDelegate.swift in Sources */,
+				1B45810E1DE1D6F1003F96A2 /* MainModule.swift in Sources */,
 				1BF815B51DDE185C00D7DDAB /* MainPresenter.swift in Sources */,
 				1B158F6E1DDF21150069E60E /* Signal.swift in Sources */,
 				1BD88B581DDEF1780059E401 /* TextLoaderProtocol.swift in Sources */,
@@ -198,6 +315,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B6050231DE1FF3900B74DC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BF8158B1DDE15EC00D7DDAB /* VIPER */;
+			targetProxy = 1B6050221DE1FF3900B74DC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1BF815981DDE15EC00D7DDAB /* LaunchScreen.storyboard */ = {
@@ -211,6 +336,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1B6050241DE1FF3900B74DC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VIPERTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.psharanda.VIPERTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIPER.app/VIPER";
+			};
+			name = Debug;
+		};
+		1B6050251DE1FF3900B74DC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VIPERTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.psharanda.VIPERTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIPER.app/VIPER";
+			};
+			name = Release;
+		};
 		1BF8159C1DDE15EC00D7DDAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,6 +480,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1B6050261DE1FF3900B74DC3 /* Build configuration list for PBXNativeTarget "VIPERTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B6050241DE1FF3900B74DC3 /* Debug */,
+				1B6050251DE1FF3900B74DC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1BF815871DDE15EC00D7DDAB /* Build configuration list for PBXProject "VIPER" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

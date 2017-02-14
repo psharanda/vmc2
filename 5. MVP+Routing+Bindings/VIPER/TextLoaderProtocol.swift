@@ -8,3 +8,9 @@ import Foundation
 protocol TextLoaderProtocol {
     func loadText(completion: @escaping (String)->Void)
 }
+
+protocol TextLoaderContainer {
+    func makeTextLoader() -> TextLoaderProtocol
+}
+
+

@@ -7,24 +7,24 @@ import UIKit
 
 class Wireframe {
     
-    let window: UIWindow
-    let navigationController: UINavigationController
-    init() {
-        window = UIWindow(frame: UIScreen.main.bounds)
+    let window: Window
+    let navigationView: NavigationView
+    
+    init(context: AppContext) {
+        window = context.makeWindow()
         
-        let vc = MainViewController()
+        let (presenter, view) = context.makeMainModule()
         
-        let presenter = MainPresenter(textLoader: TextLoader(), view: vc)
+        navigationView = context.makeNavigationView()
+        navigationView.views = [view]
         
-        vc.presenter = presenter
+        window.rootView = navigationView
         
-        navigationController = UINavigationController(rootViewController: vc)
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+        window.install()
         
         presenter.showDetails.subscribe {[unowned self, unowned presenter] in
             let vc = DetailsViewController(text: presenter.view.text.lastValue ?? nil)
-            self.navigationController.pushViewController(vc, animated: true)
+            self.navigationView.pushView(view: vc, animated: true)
         }
     }
 }

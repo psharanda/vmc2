@@ -5,7 +5,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, MainViewControllerProtocol {
+class MainViewController: UIViewController, MainViewProtocol {
     
     var presenter: Any?
     

@@ -10,9 +10,9 @@ class MainPresenter {
     var showDetails = Signal<Void>()
     
     let textLoader: TextLoaderProtocol
-    unowned let view: MainViewControllerProtocol
+    unowned let view: MainViewProtocol
     
-    init(textLoader: TextLoaderProtocol, view: MainViewControllerProtocol) {
+    init(textLoader: TextLoaderProtocol, view: MainViewProtocol) {
         self.textLoader = textLoader
         self.view = view
         
