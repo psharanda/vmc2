@@ -5,20 +5,23 @@
 
 import UIKit
 
-typealias AppContext = TextLoaderContainer & MainViewControllerContainer & NavigationControllerContainer & WindowContainer
+typealias AppContext = TextLoaderContainer & MainViewContainer & NavigationControllerContainer & WindowContainer & DetailsViewContainer
 
 
 class ProductionContext: AppContext {
     
     //internal singleton
     private static let textLoader = TextLoader()
-    
     func makeTextLoader() -> TextLoaderProtocol {
         return ProductionContext.textLoader
     }
     
-    func makeMainView() -> MainViewControllerProtocol {
+    func makeMainView() -> MainViewProtocol {
         return MainViewController()
+    }
+
+    func makeDetailsView(text: String) -> DetailsViewProtocol {
+        return DetailsViewController(text: text)
     }
 
     func makeNavigationView() -> NavigationView {

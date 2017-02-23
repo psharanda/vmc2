@@ -5,17 +5,29 @@
 
 import UIKit
 
-class MainViewController: UIViewController, MainViewControllerProtocol {
+class MainViewController: UIViewController, MainViewProtocol {
+    
     
     private lazy var button = UIButton(type: .system)
     private lazy var label = UILabel()
     private lazy var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
-
+    
+    var state: MainViewState = MainViewState() {
+        didSet {
+            render(oldState: oldValue, newState: state)
+        }
+    }
+    
+    let loadClick = Signal<Void>()
+    let detailsClick = Signal<Void>()
+    
+    //MARK:
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Massive VC"
+        title = "MVP+Routing+Bindings+FLUX"
         
         view.backgroundColor = .white
         
@@ -28,9 +40,8 @@ class MainViewController: UIViewController, MainViewControllerProtocol {
         label.numberOfLines = 0
         view.addSubview(label)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Details", style: .plain, target: self, action: #selector(doneClicked))
-        
-        render()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Details", style: .plain, target: self, action: #selector(detailsClicked))
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,31 +52,26 @@ class MainViewController: UIViewController, MainViewControllerProtocol {
         button.frame = CGRect(x: 20, y: view.bounds.height - 60, width: view.bounds.width - 40, height: 40)
     }
     
-    var state: MainViewState = MainViewState() {
-        didSet {
-           render()
-        }
+    //MARK: 
+    
+    @objc private func detailsClicked() {
+        detailsClick.update()
     }
     
-    func render() {
-        let hasText = state.text != nil
+    @objc private func buttonClicked() {
+        loadClick.update()
+    }
+    
+    //MARK: -
+    
+    func render(oldState: MainViewState, newState: MainViewState) {
         label.text = state.text
         if state.loading {
             activityIndicator.startAnimating()
         } else {
             activityIndicator.stopAnimating()
         }
-        self.navigationItem.rightBarButtonItem?.isEnabled = hasText && !state.loading
-    }
-    
-    var output: ((MainViewEvent)->Void)?
-
-    @objc private func doneClicked() {
-        output?(.showDetails)
-    }
-    
-    @objc private func buttonClicked() {
-        output?(.loadText)
+        navigationItem.rightBarButtonItem?.isEnabled = ((label.text?.characters.count) ?? 0) > 0
     }
 }
 

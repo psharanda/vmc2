@@ -6,10 +6,9 @@
 import UIKit
 
 protocol View: class {
+    var presenter: AnyObject? {get set}
     var viewController: UIViewController {get}
 }
-
-
 
 protocol NavigationView: View {
     func pushView(view: View, animated: Bool)
@@ -74,9 +73,21 @@ extension UIWindow: Window {
     
 }
 
+private var presenterKey: Int = 0
+
 extension UIViewController: View {
     var viewController: UIViewController {
         return self
+    }
+    
+    var presenter: AnyObject? {
+        get {
+            return objc_getAssociatedObject(self, &presenterKey) as AnyObject
+        }
+        
+        set {
+            objc_setAssociatedObject(self, &presenterKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
     }
 }
 

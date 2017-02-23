@@ -10,15 +10,12 @@ class Wireframe {
     let window: Window
     let navigationView: NavigationView
     
-    let store: Store
-    
     init(context: AppContext) {
-        
-        store = Store(textLoader: context.makeTextLoader())
-        
         window = context.makeWindow()
         
         let view = context.makeMainView()
+        let presenter = MainPresenter(textLoader: context.makeTextLoader(), view: view)
+        view.presenter = presenter
         
         navigationView = context.makeNavigationView()
         navigationView.views = [view]
@@ -27,13 +24,9 @@ class Wireframe {
         
         window.install()
         
-        
-        view.output = {
-            self.store.reduce(event: $0, reducer: self.store.main_reduce)
-        }
-        
-        self.store.mainViewState.subscribe {[weak view] in
-            view?.state = $0
+        presenter.showDetails.subscribe {[unowned self, unowned presenter] in
+            let vc = context.makeDetailsView(text: presenter.view.state.text ?? "WTF?")
+            self.navigationView.pushView(view: vc, animated: true)
         }
     }
 }

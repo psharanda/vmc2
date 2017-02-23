@@ -5,14 +5,14 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, DetailsViewProtocol {
     
    
     private lazy var label = UILabel()
     
-    private let text: String?
+    private let text: String
     
-    init(text: String?) {
+    init(text: String) {
         self.text = text
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,7 +29,7 @@ class DetailsViewController: UIViewController {
         view.backgroundColor = .white
         
         label.numberOfLines = 0
-        label.text = text?.uppercased()
+        label.text = text.uppercased()
         view.addSubview(label)
     }
     

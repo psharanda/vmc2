@@ -9,15 +9,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var wireframe: Wireframe?
-    var context = ProductionContext()
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
-        wireframe = Wireframe(context: context)
+        
+        wireframe = Wireframe(context: ProductionContext())
         
         return true
     }
 }
-
-
