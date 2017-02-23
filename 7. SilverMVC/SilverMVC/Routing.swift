@@ -11,12 +11,12 @@ protocol View: class {
 
 protocol NavigationView: View {
     func pushView(view: View, animated: Bool)
-    func popView(view: View, animated: Bool) -> View
+    func popView(view: View, animated: Bool) -> View?
     
     var views: [View] {get set}
 }
 
-protocol Window {
+protocol Window: class {
     var rootView: View? {get set}
     func install()
 }

@@ -22,6 +22,7 @@
 		1B60503C1DE201DE00B74DC3 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF815B61DDE1F7D00D7DDAB /* Wireframe.swift */; };
 		1B60503E1DE201F200B74DC3 /* TestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60503D1DE201F200B74DC3 /* TestContext.swift */; };
 		1B6050401DE206CD00B74DC3 /* SilverMVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60501F1DE1FF3900B74DC3 /* SilverMVCTests.swift */; };
+		1BB497FD1E5F2BA600C09614 /* Routing+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBF8A51E5F243800FD91D8 /* Routing+UIKit.swift */; };
 		1BCBF89C1E5F139C00FD91D8 /* DetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBF89B1E5F139C00FD91D8 /* DetailsViewProtocol.swift */; };
 		1BCBF89D1E5F141800FD91D8 /* DetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBF89B1E5F139C00FD91D8 /* DetailsViewProtocol.swift */; };
 		1BCBF8A41E5F239A00FD91D8 /* TestRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBF8A21E5F239300FD91D8 /* TestRouting.swift */; };
@@ -44,7 +45,7 @@
 			containerPortal = 1BF815841DDE15EC00D7DDAB /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1BF8158B1DDE15EC00D7DDAB;
-			remoteInfo = VIPER;
+			remoteInfo = SilverMVC;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -110,8 +111,7 @@
 				1B60501F1DE1FF3900B74DC3 /* SilverMVCTests.swift */,
 				1B6050211DE1FF3900B74DC3 /* Info.plist */,
 			);
-			name = SilverMVCTests;
-			path = VIPERTests;
+			path = SilverMVCTests;
 			sourceTree = "<group>";
 		};
 		1BCBF8991E5F12CE00FD91D8 /* Presenter */ = {
@@ -196,8 +196,7 @@
 				1BCBF89E1E5F222100FD91D8 /* Routing */,
 				1BCBF89A1E5F12E200FD91D8 /* Context */,
 			);
-			name = SilverMVC;
-			path = VIPER;
+			path = SilverMVC;
 			sourceTree = "<group>";
 		};
 		1BF815A51DDE165900D7DDAB /* Model */ = {
@@ -226,7 +225,7 @@
 				1B6050231DE1FF3900B74DC3 /* PBXTargetDependency */,
 			);
 			name = SilverMVCTests;
-			productName = VIPERTests;
+			productName = SilverMVCTests;
 			productReference = 1B60501D1DE1FF3900B74DC3 /* SilverMVCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -243,7 +242,7 @@
 			dependencies = (
 			);
 			name = SilverMVC;
-			productName = VIPER;
+			productName = SilverMVC;
 			productReference = 1BF8158C1DDE15EC00D7DDAB /* SilverMVC.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -318,6 +317,7 @@
 				1B6050321DE201DE00B74DC3 /* ProductionContext.swift in Sources */,
 				1B6050391DE201DE00B74DC3 /* TextLoaderProtocol.swift in Sources */,
 				1B6050341DE201DE00B74DC3 /* MainViewProtocol.swift in Sources */,
+				1BB497FD1E5F2BA600C09614 /* Routing+UIKit.swift in Sources */,
 				1B60503C1DE201DE00B74DC3 /* Wireframe.swift in Sources */,
 				1B6050381DE201DE00B74DC3 /* Signal.swift in Sources */,
 				1B6050331DE201DE00B74DC3 /* Routing.swift in Sources */,
@@ -374,9 +374,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = VIPERTests/Info.plist;
+				INFOPLIST_FILE = SilverMVCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.psharanda.VIPERTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.psharanda.SilverMVCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SilverMVC.app/SilverMVC";
@@ -387,9 +387,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = VIPERTests/Info.plist;
+				INFOPLIST_FILE = SilverMVCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.psharanda.VIPERTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.psharanda.SilverMVCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SilverMVC.app/SilverMVC";
@@ -491,9 +491,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = VIPER/Info.plist;
+				INFOPLIST_FILE = SilverMVC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.psharanda.VIPER;
+				PRODUCT_BUNDLE_IDENTIFIER = org.psharanda.SilverMVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -503,9 +503,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = VIPER/Info.plist;
+				INFOPLIST_FILE = SilverMVC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.psharanda.VIPER;
+				PRODUCT_BUNDLE_IDENTIFIER = org.psharanda.SilverMVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

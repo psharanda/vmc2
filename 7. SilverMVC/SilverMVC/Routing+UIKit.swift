@@ -13,8 +13,8 @@ extension NavigationView where Self: UINavigationController {
         pushViewController(view as! UIViewController, animated: animated)
     }
     
-    func popView(view: View, animated: Bool) -> View {
-        return popViewController(animated: animated) as! View
+    func popView(view: View, animated: Bool) -> View? {
+        return popViewController(animated: animated)
     }
     
     var views: [View] {

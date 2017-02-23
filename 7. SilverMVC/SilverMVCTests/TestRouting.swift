@@ -14,7 +14,7 @@ class TestNavigationView: TestView, NavigationView {
         views.append(view)
     }
     
-    func popView(view: View, animated: Bool) -> View {
+    func popView(view: View, animated: Bool) -> View? {
         return views.removeLast()
     }
     
