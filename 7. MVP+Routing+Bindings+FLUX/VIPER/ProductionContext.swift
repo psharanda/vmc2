@@ -5,12 +5,10 @@
 
 import UIKit
 
-typealias AppContext = TextLoaderContainer & MainViewContainer & NavigationControllerContainer & WindowContainer & DetailsViewContainer
-
 
 class ProductionContext: AppContext {
     
-    //internal singleton
+    //example of internal singleton
     private static let textLoader = TextLoader()
     func makeTextLoader() -> TextLoaderProtocol {
         return ProductionContext.textLoader

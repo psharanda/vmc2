@@ -27,7 +27,7 @@ class MainViewController: UIViewController, MainViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "MVP+Routing+Bindings+FLUX"
+        title = "SilverMVC"
         
         view.backgroundColor = .white
         
@@ -41,7 +41,8 @@ class MainViewController: UIViewController, MainViewProtocol {
         view.addSubview(label)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Details", style: .plain, target: self, action: #selector(detailsClicked))
-        navigationItem.rightBarButtonItem?.isEnabled = false
+        
+        render(oldState: state, newState: state)
     }
     
     override func viewDidLayoutSubviews() {

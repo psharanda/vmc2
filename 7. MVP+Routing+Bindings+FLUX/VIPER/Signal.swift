@@ -5,29 +5,30 @@
 
 import Foundation
 
+
 class Signal<T> {
     
-    private var _value: T?
+    private var value: T?
     
-    private var _callbacks: [(T)->Void] = []
+    private var callbacks: [(T)->Void] = []
     
     var lastValue: T? {
-        return _value
+        return value
     }
 
     func subscribe(_ callback: @escaping (T)->Void) {
         
-        _callbacks.append(callback)
+        callbacks.append(callback)
         
-        if let value = _value {
+        if let value = value {
             callback(value)
         }
     }
     
     func update(_ newValue: T) {
-        _value = newValue
+        value = newValue
         
-        _callbacks.forEach {
+        callbacks.forEach {
             $0(newValue)
         }
     }
